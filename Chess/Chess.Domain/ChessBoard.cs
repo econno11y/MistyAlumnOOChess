@@ -14,6 +14,21 @@ namespace Chess.Domain
         public ChessBoard ()
         {
             _board = new Dictionary<Position, Piece>(8 * 4);
+
+            Army white = new Army(PieceColor.White);
+            Army black = new Army(PieceColor.Black);
+
+            SetUpStartingLayout(white.Pieces);
+            SetUpStartingLayout(black.Pieces);
+        }
+
+        private void SetUpStartingLayout(Piece[] pieces)
+        {
+            foreach (Piece piece in pieces)
+            {
+                Position pos = new Position((int)piece.X, (int)piece.Y);
+                _board[pos] = piece;
+            }
         }
 
         public void Add(Position position, Piece piece)

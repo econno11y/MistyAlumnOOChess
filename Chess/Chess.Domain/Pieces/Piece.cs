@@ -7,8 +7,9 @@ namespace Chess.Domain
 {
     public abstract class Piece
     {
-        protected int? X { get; set; }
-        protected int? Y { get; set; }
+        public int? X { get; set; }
+        public int? Y { get; set; }
+        protected Rank Rank { get; set; }
         public PieceColor Color { get; }
 
         protected Piece(PieceColor color)

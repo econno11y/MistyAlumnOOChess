@@ -5,6 +5,7 @@
         public Pawn(PieceColor pieceColor)
             : base(pieceColor)
         {
+            this.Rank = Rank.Pawn;
         }
 
         public override bool IsValidMove(Vector[] vectors, bool hasMoved)
